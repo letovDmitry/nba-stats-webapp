@@ -1,6 +1,19 @@
 import * as axios from 'axios'
-export const gamesAPI = {
-    getGames(seasonYear, page) {
+export class APIRequest {
+    constructor(action) {
+        switch(action.type) {
+            default:
+                return
+            case "GET-GAMES": {
+                return APIRequest._getGames(action.seasonYear, action.page)
+            }
+            case "GET-SEASON-YEARS": {
+                return APIRequest._getSeasonYears()
+            }
+        }
+    }
+
+    static _getGames(seasonYear, page) {
         return axios({
             "method":"GET",
             "url":`https://api-nba-v1.p.rapidapi.com/games/seasonYear/${seasonYear}`,
@@ -11,14 +24,14 @@ export const gamesAPI = {
             "useQueryString":true
             }
         }).then(res => {
-            debugger
             return {
                 games: res.data.api.games.splice(page * 100 - 100, 100),
                 pages: Math.ceil(res.data.api.games.length / 100)
             }
         })
-    },
-    getSeasonYears() {
+    }
+
+    static _getSeasonYears() {
         return axios({
             "method":"GET",
             "url":"https://api-nba-v1.p.rapidapi.com/seasons/",
@@ -30,5 +43,11 @@ export const gamesAPI = {
             }
             })
             .then( res => res.data.api.seasons)
+    }
+
+    // TODO: get the next line done
+    
+    static _getNews() {
+
     }
 }

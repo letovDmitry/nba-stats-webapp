@@ -1,27 +1,30 @@
 import React from 'react'
-import { gamesAPI } from '../../api/api'
+import { APIRequest } from '../../api/api'
 import { setGamesAC, setCurrentPageAC, setSeasonYearAC, setSeasonYearsAC } from '../../state-management/reducers/games-reducer'
 import { connect } from 'react-redux'
 import Games from './Games'
 
 class GamesAPIContainer extends React.Component {
-    componentDidMount() {
-        gamesAPI.getGames(this.props.seasonYear, this.props.currentPage).then(data => {
-            this.props.setGames(data)
-        })
-        gamesAPI.getSeasonYears().then(data => this.props.setSeasonYears(data))
+    async componentDidMount() {
+        this.props.setGames(await new APIRequest({type: "GET-GAMES", 
+        seasonYear: this.props.seasonYear, 
+        page: this.props.currentPage
+        }))
+        this.props.setSeasonYears(await new APIRequest({type: "GET-SEASON-YEARS"}))
     }
-    changeCurrentPage = newCurrentPage => {
-        gamesAPI.getGames(this.props.seasonYear, this.props.currentPage).then(data => {
-            this.props.setGames(data)
-        })
+    changeCurrentPage = async newCurrentPage => {
         this.props.setCurrentPage(newCurrentPage)
+        this.props.setGames(await new APIRequest({type: "GET-GAMES", 
+        seasonYear: this.props.seasonYear, 
+        page: this.props.currentPage
+        }))
     }
-    changeSeasonYear = newSeasonYear => {
-        gamesAPI.getGames(this.props.seasonYear, this.props.currentPage).then(data => {
-            this.props.setGames(data)
-        })
+    changeSeasonYear = async newSeasonYear => {
         this.props.setSeasonYear(newSeasonYear)
+        this.props.setGames(await new APIRequest({type: "GET-GAMES", 
+        seasonYear: this.props.seasonYear, 
+        page: this.props.currentPage
+        }))
     }
     render () {
         return (

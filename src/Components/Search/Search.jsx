@@ -18,19 +18,19 @@ const suffix = (
 export default function PlayersSearch() {
     return (
         <div>
-            <div classname={c.searchById}>
+            <div className={c.searchById}>
                 <Search
                 placeholder="Search Players By Id"
                 onSearch={value => console.log(value)}
                 style={{ width: 200 }} />
             </div>
-            <div classname={c.searchByFirstName}>
+            <div className={c.searchByFirstName}>
                 <Search
                 placeholder="Search Players By FirstName"
                 onSearch={value => console.log(value)}
                 style={{ width: 200 }} />
             </div>
-            <div classname={c.searchByLastName}>
+            <div className={c.searchByLastName}>
                 <Search
                 placeholder="Search Players By LastName"
                 onSearch={value => console.log(value)}
