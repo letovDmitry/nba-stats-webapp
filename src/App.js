@@ -6,6 +6,7 @@ import NavBar from './Components/Nav/Nav';
 import { Route } from 'react-router-dom';
 import GamesContainer from './Components/Games/GamesContainer';
 import PlayersSearch from './Components/Search/Search';
+import NewsContainer from './Components/News/NewsContainer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <NavBar/>
       </div>
       <div className={c.content}>
+        <Route path="/feed" render={() => <NewsContainer />} />
         <Route path="/games" render={() => <GamesContainer />} />
         <Route path="/players" render={() => <PlayersSearch />} />
         

@@ -1,9 +1,11 @@
 import gamesReducer from "./reducers/games-reducer";
+import newsReducer from "./reducers/news-reducer"
 
 const { combineReducers, createStore } = require("redux");
 
 let reducers = combineReducers({
-    gamesPage: gamesReducer
+    gamesPage: gamesReducer,
+    newsPage: newsReducer
 })
 
 let store = createStore(reducers)

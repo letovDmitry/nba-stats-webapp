@@ -5,10 +5,14 @@ export class APIRequest {
             default:
                 return
             case "GET-GAMES": {
-                return APIRequest._getGames(action.seasonYear, action.page)
+                return APIRequest._getGames(action.seasonYear, action.page);
             }
             case "GET-SEASON-YEARS": {
-                return APIRequest._getSeasonYears()
+                return APIRequest._getSeasonYears();
+            }
+            case "GET-NEWS": {
+                debugger
+                return APIRequest._getNews();
             }
         }
     }
@@ -48,6 +52,6 @@ export class APIRequest {
     // TODO: get the next line done
     
     static _getNews() {
-
+        return axios.get(`https://newsapi.org/v2/everything?q=nba&apiKey=b23a34c77d834a399dcda0ee3dce73dd`).then(r => r.data.articles);
     }
 }

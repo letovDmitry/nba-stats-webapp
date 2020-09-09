@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Col, Row } from 'antd'
+import { Card } from 'antd'
 import 'antd/dist/antd.css'
 import c from './Game.module.css'
 import { NavLink } from 'react-router-dom';
