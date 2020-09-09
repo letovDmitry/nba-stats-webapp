@@ -7,7 +7,17 @@ import { DownOutlined } from '@ant-design/icons';
 
 const Games = props => {
     const seasonElements = props.seasonYears ? props.seasonYears.map(s => <Menu.Item><a onClick={e => props.changeSeasonYear(Number(e.target.textContent))}>{s}</a></Menu.Item>) : null
-    const gamesElements = props.games.map(g => <Col span={6}><Game hTeam={g.hTeam} vTeam={g.vTeam} arena={g.arena} city={g.city} country={g.country} league={g.league} duration={g.gameDuration} id={g.gameId}/></Col>)
+    const gamesElements = props.games.map(g => <Col span={6}>
+            <Game 
+                hTeam={g.hTeam} 
+                vTeam={g.vTeam} 
+                arena={g.arena} 
+                city={g.city} 
+                country={g.country} 
+                league={g.league} 
+                duration={g.gameDuration} 
+                id={g.gameId}/>
+        </Col>)
     const menu = (
         <Menu>{seasonElements}</Menu>
     )

@@ -2,18 +2,8 @@ import React from 'react'
 import 'antd/dist/antd.css';
 import c from './Search.module.css'
 import { Input } from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
 
 const { Search } = Input;
-
-const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: '#1890ff',
-      }}
-    />
-  );
 
 export default function PlayersSearch() {
     return (

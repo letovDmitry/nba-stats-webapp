@@ -48,10 +48,9 @@ export class APIRequest {
             })
             .then( res => res.data.api.seasons)
     }
-
-    // TODO: get the next line done
     
     static _getNews() {
-        return axios.get(`https://newsapi.org/v2/everything?q=nba&apiKey=b23a34c77d834a399dcda0ee3dce73dd`).then(r => r.data.articles);
+        return axios.get(`https://newsapi.org/v2/everything?q=nba&apiKey=b23a34c77d834a399dcda0ee3dce73dd`)
+            .then(r => r.data.articles);
     }
 }

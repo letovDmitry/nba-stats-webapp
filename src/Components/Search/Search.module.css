@@ -1,6 +1,4 @@
-.searchById {
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+.searchById, .searchByFirstName, .searchByLastName {
+    margin: 20px;
     display: inline-block;
 }

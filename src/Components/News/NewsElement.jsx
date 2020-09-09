@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card } from 'antd'
-import { NavLink } from 'react-router-dom';
 
 function NewsElement(props) {
     return (
@@ -10,7 +9,7 @@ function NewsElement(props) {
                 <p>Created at: {props.date}</p>
                 <p>{props.description}</p>
                 <p>{props.content}</p>
-                <img style={{ height: "140px", }} src={props.img}/>
+                <img alt="news" style={{ height: "140px", }} src={props.img}/>
             </Card>  
             
         </div>
