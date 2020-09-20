@@ -13,6 +13,9 @@ export class APIRequest {
 		case 'GET-NEWS': {
 			return APIRequest._getNews()
 		}
+		case 'GET-GAME-BY-ID': {
+			return APIRequest._getGameById(action.id)
+		}
 		}
 	}
 
@@ -51,5 +54,18 @@ export class APIRequest {
 	static _getNews() {
 		return axios.get('https://newsapi.org/v2/everything?q=nba&apiKey=b23a34c77d834a399dcda0ee3dce73dd')
 			.then(r => r.data.articles)
+	}
+
+	static _getGameById(id) {
+		return axios({
+			'method':'GET',
+			'url':`https://api-nba-v1.p.rapidapi.com/games/gameId/${id}`,
+			'headers':{
+				'content-type':'application/octet-stream',
+				'x-rapidapi-host':'api-nba-v1.p.rapidapi.com',
+				'x-rapidapi-key':'b21dc0a5c8msh99996a35636b826p119283jsnfdffea2f6cb2',
+				'useQueryString':true
+			}
+		})
 	}
 }
