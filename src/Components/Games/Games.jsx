@@ -1,12 +1,12 @@
-import React from 'react';
-import Game from './Game/Game';
-import c from './Games.module.css';
-import { Row, Col, Pagination, Menu, Dropdown } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import React from 'react'
+import Game from './Game/Game'
+import c from './Games.module.css'
+import { Row, Col, Pagination, Menu, Dropdown } from 'antd'
+import { DownOutlined } from '@ant-design/icons'
 
 
 const Games = props => {
-	const seasonElements = props.seasonYears ? props.seasonYears.map(s => <Menu.Item><a onClick={e => props.changeSeasonYear(Number(e.target.textContent))}>{s}</a></Menu.Item>) : null;
+	const seasonElements = props.seasonYears ? props.seasonYears.map(s => <Menu.Item><a onClick={e => props.changeSeasonYear(Number(e.target.textContent))}>{s}</a></Menu.Item>) : null
 	const gamesElements = props.games.map((g, i, k) => <Col span={6}>
 		<Game 
 			hTeam={g.hTeam} 
@@ -17,10 +17,10 @@ const Games = props => {
 			league={g.league} 
 			duration={g.gameDuration} 
 			id={g.gameId}/>
-	</Col>);
+	</Col>)
 	const menu = (
 		<Menu>{seasonElements}</Menu>
-	);
+	)
 	return (
 		<div className={c.wrapper}>
 			<div className={c.pagination}>
@@ -37,7 +37,7 @@ const Games = props => {
 				{gamesElements}
 			</Row>
 		</div>
-	);
-};
+	)
+}
 
-export default Games;
+export default Games

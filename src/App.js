@@ -1,11 +1,11 @@
-import React from 'react';
-import c from './App.module.css';
-import './App.css';
-import NavBar from './Components/Nav/Nav';
-import { Route } from 'react-router-dom';
-import GamesContainer from './Components/Games/GamesContainer';
-import PlayersSearch from './Components/Search/Search';
-import NewsContainer from './Components/News/NewsContainer';
+import React from 'react'
+import c from './App.module.css'
+import './App.css'
+import NavBar from './Components/Nav/Nav'
+import { Route } from 'react-router-dom'
+import GamesContainer from './Components/Games/GamesContainer'
+import PlayersSearch from './Components/Search/Search'
+import NewsContainer from './Components/News/NewsContainer'
 
 function App() {
 	return (
@@ -23,7 +23,7 @@ function App() {
 
 			</div>
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App

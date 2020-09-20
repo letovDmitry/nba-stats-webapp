@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card } from 'antd';
+import React from 'react'
+import { Card } from 'antd'
 
 function NewsElement(props) {
 	return (
@@ -13,7 +13,7 @@ function NewsElement(props) {
 			</Card>  
             
 		</div>
-	);
+	)
 }
 
-export default NewsElement;
+export default NewsElement

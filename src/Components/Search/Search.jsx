@@ -1,9 +1,9 @@
-import React from 'react';
-import 'antd/dist/antd.css';
-import c from './Search.module.css';
-import { Input } from 'antd';
+import React from 'react'
+import 'antd/dist/antd.css'
+import c from './Search.module.css'
+import { Input } from 'antd'
 
-const { Search } = Input;
+const { Search } = Input
 
 export default function PlayersSearch() {
 	return (
@@ -27,5 +27,5 @@ export default function PlayersSearch() {
 					style={{ width: 200 }} />
 			</div>
 		</div>
-	);
+	)
 }

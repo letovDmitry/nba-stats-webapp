@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 export default class SearchContainer extends Component {
-    render() {
-        return (
-            <div>
+	render() {
+		return (
+			<div>
                 
-            </div>
-        )
-    }
+			</div>
+		)
+	}
 }

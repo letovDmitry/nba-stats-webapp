@@ -1,30 +1,22 @@
 import React from 'react'
 import { APIRequest } from '../../api/api'
-import { setGamesAC, setCurrentPageAC, setSeasonYearAC, setSeasonYearsAC } from '../../state-management/reducers/games-reducer'
+import { setGames, setCurrentPageAC, setSeasonYearAC, setSeasonYears } from '../../state-management/reducers/games-reducer'
 import { connect } from 'react-redux'
 import Games from './Games'
 
 class GamesAPIContainer extends React.Component {
     async componentDidMount() {
-        this.props.setGames(await new APIRequest({type: "GET-GAMES", 
-        seasonYear: this.props.seasonYear, 
-        page: this.props.currentPage
-        }))
-        this.props.setSeasonYears(await new APIRequest({type: "GET-SEASON-YEARS"}))
+        this.props.setGames(this.props.seasonYear, this.props.currentPage);
+        this.props.setSeasonYears()
     }
+    
     changeCurrentPage = async newCurrentPage => {
         this.props.setCurrentPage(newCurrentPage)
-        this.props.setGames(await new APIRequest({type: "GET-GAMES", 
-        seasonYear: this.props.seasonYear, 
-        page: this.props.currentPage
-        }))
+        this.props.setGames(this.props.seasonYear, this.props.currentPage)
     }
     changeSeasonYear = async newSeasonYear => {
         this.props.setSeasonYear(newSeasonYear)
-        this.props.setGames(await new APIRequest({type: "GET-GAMES", 
-        seasonYear: this.props.seasonYear, 
-        page: this.props.currentPage
-        }))
+        this.props.setGames(this.props.seasonYear, this.props.currentPage)
     }
     render () {
         return (
@@ -43,6 +35,6 @@ const mapStateToProps = state => {
     }
 }
 
-const GamesContainer = connect(mapStateToProps, {setGames: setGamesAC, setCurrentPage: setCurrentPageAC, setSeasonYear: setSeasonYearAC, setSeasonYears: setSeasonYearsAC})(GamesAPIContainer)
+const GamesContainer = connect(mapStateToProps, {setGames, setCurrentPage: setCurrentPageAC, setSeasonYear: setSeasonYearAC, setSeasonYears})(GamesAPIContainer)
 
 export default GamesContainer

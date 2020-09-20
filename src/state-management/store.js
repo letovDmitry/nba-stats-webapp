@@ -1,16 +1,15 @@
-import gamesReducer from './reducers/games-reducer';
-import newsReducer from './reducers/news-reducer';
-
-const { combineReducers, createStore } = require('redux');
+import gamesReducer from './reducers/games-reducer'
+import newsReducer from './reducers/news-reducer'
+import thunk from 'redux-thunk'
+const { combineReducers, createStore, applyMiddleware } = require('redux')
 
 const reducers = combineReducers({
 	gamesPage: gamesReducer,
 	newsPage: newsReducer,
-});
+})
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunk))
 
-window.state = store.getState();
-window.stateCopy = { ...store.getState() };
+window.state = store.getState()
 
-export default store;
+export default store

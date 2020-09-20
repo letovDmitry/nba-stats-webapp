@@ -1,17 +1,17 @@
-import * as axios from 'axios';
+import * as axios from 'axios'
 export class APIRequest {
 	constructor(action) {
 		switch(action.type) {
 		default:
-			return;
+			return
 		case 'GET-GAMES': {
-			return APIRequest._getGames(action.seasonYear, action.page);
+			return APIRequest._getGames(action.seasonYear, action.page)
 		}
 		case 'GET-SEASON-YEARS': {
-			return APIRequest._getSeasonYears();
+			return APIRequest._getSeasonYears()
 		}
 		case 'GET-NEWS': {
-			return APIRequest._getNews();
+			return APIRequest._getNews()
 		}
 		}
 	}
@@ -30,8 +30,8 @@ export class APIRequest {
 			return {
 				games: res.data.api.games.splice(page * 100 - 100, 100),
 				pages: Math.ceil(res.data.api.games.length / 100)
-			};
-		});
+			}
+		})
 	}
 
 	static _getSeasonYears() {
@@ -45,11 +45,11 @@ export class APIRequest {
 				'useQueryString':true
 			}
 		})
-			.then( res => res.data.api.seasons);
+			.then( res => res.data.api.seasons)
 	}
     
 	static _getNews() {
 		return axios.get('https://newsapi.org/v2/everything?q=nba&apiKey=b23a34c77d834a399dcda0ee3dce73dd')
-			.then(r => r.data.articles);
+			.then(r => r.data.articles)
 	}
 }
