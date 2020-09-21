@@ -5,16 +5,16 @@ import { connect } from 'react-redux'
 import Games from './Games'
 
 class GamesAPIContainer extends React.Component {
-    async componentDidMount() {
+    componentDidMount() {
         this.props.setGames(this.props.seasonYear, this.props.currentPage);
         this.props.setSeasonYears()
     }
     
-    changeCurrentPage = async newCurrentPage => {
+    changeCurrentPage = newCurrentPage => {
         this.props.setCurrentPage(newCurrentPage)
         this.props.setGames(this.props.seasonYear, this.props.currentPage)
     }
-    changeSeasonYear = async newSeasonYear => {
+    changeSeasonYear = newSeasonYear => {
         this.props.setSeasonYear(newSeasonYear)
         this.props.setGames(this.props.seasonYear, this.props.currentPage)
     }

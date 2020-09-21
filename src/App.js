@@ -1,6 +1,5 @@
 import React from 'react'
 import c from './App.module.css'
-import './App.css'
 import NavBar from './Components/Nav/Nav'
 import { Route } from 'react-router-dom'
 import GamesContainer from './Components/Games/GamesContainer'

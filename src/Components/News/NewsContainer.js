@@ -5,7 +5,7 @@ import News from './News'
 
 
 class NewsAPIContainer extends React.Component {
-	async componentDidMount() {
+	componentDidMount() {
 		this.props.setArticles()
 	}
 	render() {
