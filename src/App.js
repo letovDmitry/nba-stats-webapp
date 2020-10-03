@@ -10,9 +10,6 @@ import SearchContainer from './Components/Search/SearchContainer'
 function App() {
 	return (
 		<div className={c.appWrapper}>
-			<div className={c.tab}>
-				{/* <img className={c.tabImg} src='https://cdn.nba.net/nba-drupal-prod/2017-08/Twitter-seo-image-NBA-logman.jpg'></img> */}
-			</div>
 			<div>
 				<NavBar />
 			</div>
