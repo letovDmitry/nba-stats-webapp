@@ -8,7 +8,7 @@ class SearchAPIContainer extends React.Component {
 	render() {
 		return (
 			<div>
-                <PlayersSearch {...this.props} searchPlayerById={this.searchPlayerById} />
+        <PlayersSearch {...this.props} searchPlayerById={this.searchPlayerById} />
 			</div>
 		)
 	}
