@@ -7,13 +7,15 @@ import { Card } from 'antd'
 const { Search } = Input
 
 export default function PlayersSearch(props) {
-	const players = props.players.map(el => <Card title={`${el.firstName} ${el.lastName}`}>
-		<p>Country: {el.country}</p>
-		<p>Born at: {el.dateOfBirth}</p>
-		<p>Started playing in NBA: {el.startedNba}</p>
-		<p>Height: {el.heightInMeters}</p>
-		<p>Weight: {el.weightInKilograms}</p>
-	</Card>)
+	const players = props.players.map(el => <div style={{ margin: '20px' }}>
+		<Card title={`${el.firstName} ${el.lastName}`}>
+			<p>Country: {el.country}</p>
+			<p>Born at: {el.dateOfBirth}</p>
+			<p>Started playing in NBA: {el.startedNba}</p>
+			<p>Height: {el.heightInMeters}</p>
+			<p>Weight: {el.weightInKilograms}</p>
+		</Card>
+	</div>)
 	return (
 		<div>
 			<div className={c.searchById}>
@@ -31,7 +33,7 @@ export default function PlayersSearch(props) {
 			<div className={c.searchByLastName}>
 				<Search
 					placeholder="Search Players By LastName"
-					onSearch={value => console.log(value)}
+					onSearch={value => props.searchPlayerByLastName(value)}
 					style={{ width: 200 }} />
 			</div>
 			<div style={{ margin: '4rem' }}>

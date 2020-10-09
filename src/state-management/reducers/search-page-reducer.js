@@ -26,4 +26,8 @@ export const getPlayerByFirstName = firstName => async dispatch => {
     dispatch(setPlayersAC(await new APIRequest({ type: 'GET-PLAYER-BY-FIRST-NAME', firstName, })));
 }
 
+export const getPlayerByLastName = lastName => async dispatch => {
+    dispatch(setPlayersAC(await new APIRequest({ type: 'GET-PLAYER-BY-LAST-NAME', lastName, })));
+}
+
 export default searchPageReducer;
