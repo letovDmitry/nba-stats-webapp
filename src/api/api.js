@@ -19,6 +19,9 @@ export class APIRequest {
 		case 'GET-PALYER-BY-ID': {
 			return APIRequest._getPlayerById(action.id)
 		}
+		case 'GET-PLAYER-BY-FIRST-NAME': {
+			return APIRequest._getPlayerByFirstName(action.firstName)
+		}
 		}
 	}
 
@@ -83,5 +86,17 @@ export class APIRequest {
 			"useQueryString":true
 			}
 		}).then(res => res.data.api.players);
+	}
+	static _getPlayerByFirstName(firstName) {
+		return axios({
+			"method":"GET",
+			"url":`https://api-nba-v1.p.rapidapi.com/players/firstName/${firstName}`,
+			"headers":{
+			"content-type":"application/octet-stream",
+			"x-rapidapi-host":"api-nba-v1.p.rapidapi.com",
+			"x-rapidapi-key":"SIGN-UP-FOR-KEY",
+			"useQueryString":true
+			}
+			}).then(res => res.data.api.players);
 	}
 }

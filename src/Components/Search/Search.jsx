@@ -25,7 +25,7 @@ export default function PlayersSearch(props) {
 			<div className={c.searchByFirstName}>
 				<Search
 					placeholder="Search Players By FirstName"
-					onSearch={value => console.log(value)}
+					onSearch={value => props.searchPlayerByFirstName(value)}
 					style={{ width: 200 }} />
 			</div>
 			<div className={c.searchByLastName}>
