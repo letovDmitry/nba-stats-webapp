@@ -29,7 +29,7 @@ const Game = props => {
                     <p>{winner.fullName}</p>
                 </Card>    
                 <p>{`${winner.score.points}:${loser.score.points}`}</p> 
-                <Card type="inner" title="Loser">
+                <Card type="inner" title="Looser">
                     <img className={c.logo} src={loser.logo}/>
                     <p>{loser.fullName}</p>
                 </Card>
