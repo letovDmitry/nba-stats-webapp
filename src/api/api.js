@@ -75,7 +75,7 @@ export class APIRequest {
 				'x-rapidapi-key':'b21dc0a5c8msh99996a35636b826p119283jsnfdffea2f6cb2',
 				'useQueryString':true
 			}
-		})
+		}).then(res => res.data.api.games[0])
 	}
 
 	static _getPlayerById(id) {

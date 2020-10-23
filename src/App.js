@@ -6,7 +6,7 @@ import GamesContainer from './Components/Games/GamesContainer'
 import PlayersSearch from './Components/Search/Search'
 import NewsContainer from './Components/News/NewsContainer'
 import SearchContainer from './Components/Search/SearchContainer'
-import GamePage from './Components/GamePage/GamePage'
+import GamePage from './Components/GamePage/GamePageContainer'
 
 function App() {
 	return (
@@ -17,7 +17,7 @@ function App() {
 			<div className={c.content}>
 				<Route path="/feed" render={() => <NewsContainer />} />
 				<Route path="/games" render={() => <GamesContainer />} />
-				<Route path="/game:uID?" render={() => <GamePage />} />
+				<Route path="/game/:gID?" render={() => <GamePage />} />
 				<Route path="/players" render={() => <SearchContainer />} />
 
 			</div>
