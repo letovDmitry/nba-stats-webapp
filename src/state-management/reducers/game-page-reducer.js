@@ -1,9 +1,7 @@
 import { APIRequest } from "../../api/api"
 
 const initialState = {
-	gameData: {
-		
-	}
+	gameData: {}
 }
 
 const gamesPageReducer = (state = {gameData: {}}, action) => {
