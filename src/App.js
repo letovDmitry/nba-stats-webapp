@@ -19,7 +19,6 @@ function App() {
 				<Route path="/games" render={() => <GamesContainer />} />
 				<Route path="/game/:gID?" render={() => <GamePage />} />
 				<Route path="/players" render={() => <SearchContainer />} />
-
 			</div>
 		</div>
 	)
