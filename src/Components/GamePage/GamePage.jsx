@@ -6,7 +6,6 @@ import 'antd/dist/antd.css'
 const { Title } = Typography;
 
 const GamePage = props => {
-	debugger
 	const game = props.info
 	return (
 		<div style={{ margin: '3rem' }}>
