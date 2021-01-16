@@ -9,7 +9,6 @@ class GamePageAPIContainer extends Component {
     this.props.setGameData(this.props.match.params.gID)
   }
   render() {
-    debugger
     return (
       <div>
         <GamePage {...this.props} />

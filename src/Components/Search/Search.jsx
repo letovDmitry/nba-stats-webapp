@@ -9,9 +9,10 @@ const { Search } = Input
 export default function PlayersSearch(props) {
 	const players = props.players.map(el => <div style={{ margin: '20px' }}>
 		<Card title={`${el.firstName} ${el.lastName}`}>
+			<p>Id: {el.playerId}</p>
 			<p>Country: {el.country}</p>
 			<p>Born at: {el.dateOfBirth}</p>
-			<p>Started playing in NBA: {el.startedNba}</p>
+			<p>Started playing in NBA: {el.startNba}</p>
 			<p>Height: {el.heightInMeters}</p>
 			<p>Weight: {el.weightInKilograms}</p>
 		</Card>
