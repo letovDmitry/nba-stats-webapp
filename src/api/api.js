@@ -1,4 +1,6 @@
 import * as axios from 'axios'
+
+/* OK, let's make some shit coding */
 export class APIRequest {
 	constructor(action) {
 		switch(action.type) {
